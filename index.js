@@ -27,8 +27,8 @@ app.get('/callback', async function(req, res) {
     let organisations = await xeroClient.organisations.get();
     let invoices = await xeroClient.invoices.get();
 
-    let lastInvoiceNumber = invoices.Invoices[0].InvoiceNumber;
-    res.send("Hello, " + organisations.Organisations[0].Name + ". You're last invoice was " + lastInvoiceNumber);
+    let lastInvoiceNumber = invoices.Invoices[1].InvoiceNumber;
+    res.send("Hello, " + organisations.Organisations[0].Name + ". Your last invoice was " + lastInvoiceNumber);
 })
 
 app.listen(app.get('port'), function() {
